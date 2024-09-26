@@ -6,6 +6,7 @@ on:
       - master
       - 'feature*'
       - 'hotfix*'
+  workflow_dispatch:
 
 jobs:
   analyze:
