@@ -1,9 +1,12 @@
-name: Continuous Integration for dianaflorez
+name: Continuous Integration for DianaFlorez
 
 on:
   push:
     branches:
       - master
+      - 'feature*'
+      - 'hotfix*'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -21,8 +24,4 @@ jobs:
           echo "username=${{ secrets.USERNAME }}" >> credentials.ini
           echo "password=${{ secrets.PASSWORD }}" >> credentials.ini
 
-      # Paso 3: Build docker image
-      - name: Build docker image
-        run: docker build -t devops_ws . --tag devops_ws_:$(date +%s)
-
-
+     
